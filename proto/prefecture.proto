@@ -1,0 +1,17 @@
+syntax = "proto3";
+package prefecture;
+
+import "common.proto";
+
+service PrefectureService {
+  rpc List (common.Empty) returns (PrefectureList);
+}
+
+message Prefecture {
+  int32 id = 1;
+  string name = 2;
+}
+
+message PrefectureList {
+  repeated Prefecture items = 1;
+}

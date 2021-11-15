@@ -1,0 +1,18 @@
+syntax = "proto3";
+package user;
+
+import "common.proto";
+
+service UserService {
+    rpc GetMe (common.Empty) returns (User);
+    rpc List (common.Empty) returns (UserList);
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+}
+
+message UserList {
+    repeated User items = 1;
+}
